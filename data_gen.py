@@ -12,8 +12,7 @@ from keras.utils import to_categorical
 # Dr.Adrian Dalca's toolbox
 sys.path.append('ext/pynd-lib')
 sys.path.append('ext/neuron')
-sys.path.append('ext/pytools-lib')
-sys.path.append('ext/pytools-lib/pytools')
+sys.path.append('ext/pytools')
 import patchlib
 import generators
 import dataproc
