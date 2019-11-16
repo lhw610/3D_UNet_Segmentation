@@ -75,13 +75,13 @@ def train(save_name, gpu_id, num_data,iters,load,checkpoint,num_labels):
         train_data = data_gen.example_gen(train_vols_data)
         initial_epoch = 0
         for step in range(iters):
-            train_vols, train_labels = data_gen.full_data(vol_gen = train_data, 
-                                                        trf_vol_model=trf_vol_model,
-                                                        trf_label_model=trf_label_model,
-                                                        resize_model = resize_model, 
-                                                        patch_size = patch_size,
-                                                        labels = labels, 
-                                                        stride_patch = stride)
+            train_vols, train_labels = data_gen.vol_and_label_generator_patch(vol_gen = train_data, 
+                                                                            trf_vol_model=trf_vol_model,
+                                                                            trf_label_model=trf_label_model,
+                                                                            resize_model = resize_model, 
+                                                                            patch_size = patch_size,
+                                                                            labels = labels, 
+                                                                            stride_patch = stride)
 
             train_loss = model.fit(x=train_vols, y=train_labels, epochs=1, batch_size=1, shuffle=True, initial_epoch = initial_epoch,verbose=0)
 
