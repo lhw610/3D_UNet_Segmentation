@@ -1,5 +1,5 @@
-# Patch-based_3D_U-Net
-This segmentation toolbox divides 3D MRI volume into several patches and perform multi-label segmentation. It trains the individual patches then predicts the label. 
+# 3D volume segmentation
+This segmentation toolbox originally designed for 3D Brain MRI volume segmentation. It divides 3D MRI volume into several patches and perform multi-label segmentation. 
 The labels for the overlapping region of patches are determined by calculating the average probability map.
 
 # Instruction
