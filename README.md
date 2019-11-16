@@ -1,5 +1,5 @@
-# 3D volume segmentation
-This segmentation toolbox originally designed for 3D Brain MRI volume segmentation. It divides 3D MRI volume into several patches and perform multi-label segmentation. 
+# 3D UNet Segmentation
+This segmentation toolbox is designed for 3D Brain MRI volume segmentation. It divides 3D MRI volume into several patches and perform multi-label segmentation. 
 The labels for the overlapping region of patches are determined by calculating the average probability map.
 
 # Instruction
