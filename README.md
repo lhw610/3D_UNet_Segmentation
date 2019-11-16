@@ -4,7 +4,7 @@ The labels for the overlapping region of patches are determined by calculating t
 
 # Instruction
 # Training
-To train the model, set the training data directory in training.py and run the file. The weights of the trained model will be save to the models/ folder
+To train the model, set the training data directory in train.py and run the file. The weights of the trained model will be save to the models/ folder
 
 # Testing
 Measures a dice scores between the prediction and ground truth.
