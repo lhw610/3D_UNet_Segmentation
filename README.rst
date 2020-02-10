@@ -46,18 +46,18 @@ Citation
 -------
 This 3D UNet with spatial data augmentation used in segmentation model comparison in low supervised setting:
 
-"Few Labeled Atlases are Necessary for Deep-Learning-Based Segmentation." 
-| Hyeon Woo Lee, Mert R. Sabuncu, and Adrian V. Dalca. 
-| Neurips ML4HL. arXiv preprint arXiv:1908.04466 (2019).
+"Few Labeled Atlases are Necessary for Deep-Learning-Based Segmentation." <br />
+Hyeon Woo Lee, Mert R. Sabuncu, and Adrian V. Dalca. <br />
+Neurips ML4HL. arXiv preprint arXiv:1908.04466 (2019).
 
 * Our proposed method in this paper, multi-atlas segmentation with semi-supervision can be found from:
 voxelmorph.mit.edu
 
 Spatial Transformer Network implementation code is from:
 
-Unsupervised Learning for Fast Probabilistic Diffeomorphic Registration
-| Adrian V. Dalca, Guha Balakrishnan, John Guttag, Mert R. Sabuncu
-| MICCAI 2018. eprint arXiv:1805.04605
+Unsupervised Learning for Fast Probabilistic Diffeomorphic Registration <br />
+Adrian V. Dalca, Guha Balakrishnan, John Guttag, Mert R. Sabuncu <br />
+MICCAI 2018. eprint arXiv:1805.04605
 
 Contacts
 -------
