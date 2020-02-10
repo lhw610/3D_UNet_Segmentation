@@ -27,18 +27,20 @@ import pdb
 
 def train(source,
           target,
+          data_type,
+          channel,
           save_name, 
           gpu_id, 
           iters,
           load_model,
           save_iters,
           num_labels,
-          batch
+          batch,
           ):
     
     # read images from given directory
-    train_img_list = glob.glob(source + '/*.tiff')
-    target_img_list = glob.glob(target + '/*.tiff')
+    train_img_list = glob.glob(source + '/*.' + data_type)
+    target_img_list = glob.glob(target + '/*.' + data_type)
 
     train_img_list.sort()
     target_img_list.sort()
@@ -67,7 +69,7 @@ def train(source,
     trf_vol_model = utils.linear_vol_trf(patch_size, indexing='ij')
 
     # trainset generator
-    train_data = data_generator.train_data_gen(train_img_list, target_img_list, patch_size, num_labels, trf_vol_model, trf_label_model,channel=2)
+    train_data = data_generator.train_data_gen(train_img_list, target_img_list, patch_size, num_labels, trf_vol_model, trf_label_model,channel=channel)
 
 
     with tf.device(gpu):
@@ -95,6 +97,8 @@ if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument("--source", type=str,required=True,dest="source", help="File path to the source")
     parser.add_argument("--target", type=str,required=True,dest="target", help="File path to the target")
+    parser.add_argument("--data_type", type=str,required=False, default= "tiff", dest="data_type", help="data type of your image file")
+    parser.add_argument("--ch", type=int,required=False,default=2,dest="channel", help="channel of the image if it is multi_channel")
     parser.add_argument("--save_name", type=str,required=True,dest="save_name", help="Name of training model for saving")
     parser.add_argument("--gpu", type=int,required=False, default = 0, dest="gpu_id", help="gpu id number")
     parser.add_argument("--iters", type=int,required=True, dest="iters", help="number of epoch")

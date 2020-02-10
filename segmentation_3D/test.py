@@ -20,10 +20,10 @@ import network
 import data_generator
 from utils import assemble_patches
 
-def inference(dir, model_name, iters, save_dir, num_classes, gpu_id):
+def inference(dir, data_type, channel, model_name, iters, save_dir, num_classes, gpu_id):
 
     # read images from given directory
-    inference_img_list = glob.glob(dir + '/*.tiff')
+    inference_img_list = glob.glob(dir + '/*.' + data_type)
 
     # patch size
     patch_size = (64,64,64)
@@ -49,7 +49,7 @@ def inference(dir, model_name, iters, save_dir, num_classes, gpu_id):
             model = network.unet(input_size=(64,64,64,1),label_nums=num_classes)
             model.load_weights('/media/lhw610/HD_1T/models/3d_segmentation/' + model_name + '/' + 'weights-' + str(iters) + '.hdf5')
             for inference_img in inference_img_list:
-                img_patches = data_generator.test_data_gen(inference_img, patch_size, num_classes, channel=2)
+                img_patches = data_generator.test_data_gen(inference_img, patch_size, num_classes, channel=channel)
                 predict_patch = []
                 for patch in img_patches[0]:
                     patch = patch[np.newaxis, ..., np.newaxis].astype('float32')
@@ -61,6 +61,8 @@ def inference(dir, model_name, iters, save_dir, num_classes, gpu_id):
 if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument("--dir", type=str,required=True,dest="dir", help="File path to the source")
+    parser.add_argument("--data_type", type=str,required=True,dest="data_type", help="data type of your image file")
+    parser.add_argument("--ch", type=int,required=False,default=2,dest="channel", help="channel of the image if it is multi_channel")
     parser.add_argument("--model_name", type=str,required=True,dest="model_name", help="Name of trained model to import weight from")
     parser.add_argument("--iters", type=int,required=True, dest="iters", help="number of epoch of trained model")
     parser.add_argument("--save_dir", type=str,required=True,dest="save_dir", default=None, help="result saving directory")
