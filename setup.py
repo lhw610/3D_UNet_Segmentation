@@ -43,7 +43,7 @@ setup(
         'scikit-image >= 0.16.2',
         'scipy >= 1.4.1',
         'tensorflow >= 2.1.0',
-        'keras >= 2.31',
+        'keras >= 2.3.1',
         'tqdm >= 4.42.1',
         'keras-tqdm >= 2.0.1'
     ],
