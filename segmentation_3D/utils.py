@@ -43,10 +43,7 @@ def assemble_patches(patches, shape_info, img_size):
     for x_patch in range(0,padded_shape[2],patch_size[2]):
         for y_patch in range(0,padded_shape[1],patch_size[1]):
             for z_patch in range(0,padded_shape[0],patch_size[0]):
-                try:
-                    template[z_patch:(z_patch+patch_size[0]),y_patch:(y_patch+patch_size[1]), x_patch:(x_patch+patch_size[2])] = patches[idx]
-                except:
-                    pdb.set_trace()
+                template[z_patch:(z_patch+patch_size[0]),y_patch:(y_patch+patch_size[1]), x_patch:(x_patch+patch_size[2])] = patches[idx]
                 idx += 1
     if np.max(template) != 1:
         return template[0:img_size[0], 0:img_size[1], 0:img_size[2]]
