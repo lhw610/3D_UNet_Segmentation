@@ -1,12 +1,13 @@
 ===============
-3D_Segmentation
+3D UNet Segmentation
 ===============
 3D image segmentation with UNet and spatial data augmentation
 
 
 * Free software: GNU General Public License v3
 
-3D Segmentation
+Intro
+-------
 This is an implementation of 3D-UNet with spatial data augmentation. The 3D UNet takes the image and segments the object.
 It can perform binary segmenation, or even multi label segmentation. The full 3D deformation makes this model robust in low supervised setting.
 

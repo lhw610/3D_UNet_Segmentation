@@ -58,7 +58,7 @@ def train(source,
     ######################################################
 
     # check if model save path exists
-    model_dir = '/media/lhw610/HD_1T/models/3d_segmentation/' + save_name
+    model_dir = './model/' + save_name
     if not os.path.isdir(model_dir):
         os.mkdir(model_dir)
 
