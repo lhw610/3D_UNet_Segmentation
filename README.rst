@@ -8,7 +8,7 @@
 
 Intro
 -------
-This is an implementation of 3D-UNet with spatial data augmentation. The 3D UNet takes the image and segments the object.
+This is an implementation of 3D-UNet with spatial data augmentation. The 3D UNet takes the 3D image and segments the object.
 It can perform binary segmenation, or even multi label segmentation. The full 3D deformation makes this model robust in low supervised setting.
 
 Install instruction
@@ -27,14 +27,14 @@ Train the model
 -------
 To train the model, pass the training data directory to ./segmentation_3D/train.py 
 The input image should be in [z,y,x,channel] format.
-run train.py by passing required parameters like following Example
+run train.py by passing required arguments like following Example
 
 Example:
-python train.py --source /path/to/source/directory --target /path/to/source/directory --data_type tiff --ch 2 --save_name demo --iters 100 --save_iters 10 --batch 20
+python train.py --source /path/to/source/directory --target /path/to/target/directory --data_type tiff --ch 2 --save_name demo --iters 100 --save_iters 10 --batch 20
 
 Inference
 -------
-To inference, pass the test image directory to ./segmentation_3D/test.py 
+To inference, pass the test image directory and other arugmentsto ./segmentation_3D/test.py 
 The input image should be in [z,y,x,channel] format.
 The segmented image will be saved to ./inference/save_dir
 
@@ -44,7 +44,7 @@ python test.py --dir /path/to/test/image/directory --data_type tiff --ch 2 --mod
 
 Citation
 -------
-3D UNet with spatial data augmentation is used in:
+This 3D UNet with spatial data augmentation is used in:
 "Few Labeled Atlases are Necessary for Deep-Learning-Based Segmentation." 
 Hyeon Woo Lee, Mert R. Sabuncu, and Adrian V. Dalca. 
 Neurips ML4HL. arXiv preprint arXiv:1908.04466 (2019).
