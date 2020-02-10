@@ -14,7 +14,7 @@ Install instruction
 -------
 To install this package,
 
-1. git clone the package
+1. git clone https://github.com/lhw610/3D_UNet_segmentaion.git
 
 2. cd ./3D_UNet_segmentaion
 
