@@ -48,15 +48,15 @@ def inference(dir, data_type, channel, model_name, iters, save_dir, num_classes,
     with tf.device(gpu):
             model = network.unet(input_size=(64,64,64,1),label_nums=num_classes)
             model.load_weights('/media/lhw610/HD_1T/models/3d_segmentation/' + model_name + '/' + 'weights-' + str(iters) + '.hdf5')
-            for inference_img in inference_img_list:
+            for idx, inference_img in enumerate(inference_img_list):
                 img_patches = data_generator.test_data_gen(inference_img, patch_size, num_classes, channel=channel)
                 predict_patch = []
                 for patch in img_patches[0]:
                     patch = patch[np.newaxis, ..., np.newaxis].astype('float32')
                     predict_patch.append(np.argmax(model.predict(patch)[0,:,:,:,:], axis=-1))
-                print(img_patches[1], img_patches[2])
+
                 full_img = assemble_patches(predict_patch, img_patches[1], img_patches[2])
-                imsave(save + "/predicted_img.tiff", full_img.astype('uint8'))
+                imsave(save + "/predicted_img" + str(idx) + ".tiff", full_img.astype('uint8'))
 
 if __name__ == "__main__":
     parser = ArgumentParser()

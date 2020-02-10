@@ -19,7 +19,7 @@ test_requirements = [ ]
 setup(
     author="Hyeonwoo Lee",
     author_email='hyeonwoo610@gmail.com',
-    python_requires='>=3.5',
+    python_requires='>=3.7',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -37,7 +37,16 @@ setup(
             'segmentation_3D=segmentation_3D.cli:main',
         ],
     },
-    install_requires=requirements,
+    install_requires=[
+        'keras >= 2.31',
+        'numpy >= 1.18.1',
+        'pillow >= 7.0.0',
+        'scikit-image >= 0.16.2',
+        'scipy >= 1.4.1',
+        'tensorflow >= 2.1.0',
+        'tqdm >= 4.42.1',
+        'keras-tqdm >= 2.0.1'
+    ],
     license="GNU General Public License v3",
     long_description=readme + '\n\n' + history,
     include_package_data=True,

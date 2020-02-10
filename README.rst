@@ -1,26 +1,10 @@
 ===============
 3D_Segmentation
 ===============
-
-
-.. image:: https://img.shields.io/pypi/v/segmentation_3D.svg
-        :target: https://pypi.python.org/pypi/segmentation_3D
-
-.. image:: https://img.shields.io/travis/lhw610/segmentation_3D.svg
-        :target: https://travis-ci.com/lhw610/segmentation_3D
-
-.. image:: https://readthedocs.org/projects/segmentation-3D/badge/?version=latest
-        :target: https://segmentation-3D.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
-
-
-
-
 3D image segmentation with UNet and spatial data augmentation
 
 
 * Free software: GNU General Public License v3
-* Documentation: https://segmentation-3D.readthedocs.io.
 
 # 3D Segmentation
 This is an implementation of 3D-UNet with spatial data augmentation. The 3D UNet takes the image and segments the object.
@@ -29,9 +13,9 @@ It can perform binary segmenation, or even multi label segmentation. The full 3D
 Install instruction
 -------
 To install this package,
-1. git clone the package
-2. cd ./3D_UNet_segmentaion
-2. pip install -e .
+1. git clone the package  <br/>
+2. cd ./3D_UNet_segmentaion  <br/>
+2. pip install -e .  <br/>
 
 Train the model
 -------
@@ -40,21 +24,16 @@ The input image should be in [z,y,x,channel] format.
 run train.py by passing required parameters like following Example
 
 Example:
-python train.py --source /path/to/source/directory 
-                --target /path/to/source/directory 
-                --data_type tiff
-                --ch 2
-                --save_name demo 
-                --iters 100 
-                --save_iters 10 
-                --batch 20
-
-
+python train.py --source /path/to/source/directory --target /path/to/source/directory --data_type tiff --ch 2 --save_name demo --iters 100 --save_iters 10 --batch 20
 
 Inference
 -------
-Measures a dice scores between the prediction and ground truth.
-Run test.py
+To inference, pass the test image directory to ./segmentation_3D/test.py 
+The input image should be in [z,y,x,channel] format.
+The segmented image will be saved to ./inference/save_dir
+
+Example:
+python test.py --dir /path/to/test/image/directory --data_type tiff --ch 2 --model demo --iters 100 --save_dir directory name to save result
 
 
 Citation

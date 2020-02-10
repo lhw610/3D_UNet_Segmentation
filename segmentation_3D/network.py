@@ -7,7 +7,7 @@ from keras.layers import Input, concatenate, Conv3D, MaxPooling3D, UpSampling3D
 from keras.optimizers import Adam
 
 
-def unet(input_size=None, label_nums=30): #slices = 224
+def unet(input_size=None, label_nums=2):
     if input_size is None:
         input_size = (64, 64, 64, 1)
     inputs = Input(input_size)

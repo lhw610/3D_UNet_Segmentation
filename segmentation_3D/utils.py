@@ -97,8 +97,8 @@ def spatial_data_augmentation(source, target, size, trf_vol_model, trf_label_mod
     perform full 3D deformation using smooth random field. This dense augmentation makes model more robust compared to simple data augmentation
     such as rotation, and crop.
     '''
-    random_array = np.random.rand(16,16,16) # increasing size of initial random array will make random field less smooth
-    da_factor = np.random.random(1) * 15 # increasing da factor will give more distortion
+    random_array = np.random.rand(8,8,8) # increasing size of initial random array will make random field less smooth
+    da_factor = np.random.random(1) * 20 # increasing da factor will give more distortion
     random_array = random_array * da_factor
     smooth_field = resize(random_array, size)
     smooth_field = smooth_field[np.newaxis, ...]

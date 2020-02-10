@@ -5,7 +5,6 @@ import sys
 import random
 from argparse import ArgumentParser
 import scipy.io as sio
-import ipykernel
 
 import tensorflow as tf
 from tensorflow.compat.v1 import ConfigProto
@@ -22,8 +21,6 @@ from keras_tqdm import TQDMCallback
 import network
 import data_generator
 import utils
-
-import pdb
 
 def train(source,
           target,
