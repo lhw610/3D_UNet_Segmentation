@@ -47,7 +47,7 @@ This 3D UNet with spatial data augmentation used in segmentation model compariso
 
 "Few Labeled Atlases are Necessary for Deep-Learning-Based Segmentation." <br />
 Hyeon Woo Lee, Mert R. Sabuncu, and Adrian V. Dalca. <br />
-Neurips ML4HL. arXiv preprint arXiv:1908.04466 (2019).
+arXiv preprint arXiv:1908.04466 (2019).
 
 * Our proposed method in this paper, multi-atlas segmentation with semi-supervision can be found from:
 voxelmorph.mit.edu

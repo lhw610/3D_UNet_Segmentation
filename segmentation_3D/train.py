@@ -80,7 +80,7 @@ def train(source,
             model.load_weights(load_model)
 
         # train the model
-        checkpoint = keras.callbacks.ModelCheckpoint('/media/lhw610/HD_1T/models/3d_segmentation/'+save_name+'/'+"weights-{epoch:02d}.hdf5", monitor='loss_1',
+        checkpoint = keras.callbacks.ModelCheckpoint(model_dir+'/'+"weights-{epoch:02d}.hdf5", monitor='loss_1',
                         verbose=0, save_best_only=False, save_weights_only=False, mode='auto', period=save_iters)
         callbacks_list = [checkpoint, TQDMCallback()]
         model.fit(train_data,
