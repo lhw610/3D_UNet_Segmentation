@@ -6,16 +6,16 @@
 
 * Free software: GNU General Public License v3
 
-# 3D Segmentation
+3D Segmentation
 This is an implementation of 3D-UNet with spatial data augmentation. The 3D UNet takes the image and segments the object.
 It can perform binary segmenation, or even multi label segmentation. The full 3D deformation makes this model robust in low supervised setting.
 
 Install instruction
 -------
 To install this package,
-1. git clone the package  <br/>
-2. cd ./3D_UNet_segmentaion  <br/>
-2. pip install -e .  <br/>
+| 1. git clone the package
+| 2. cd ./3D_UNet_segmentaion
+| 3. pip install -e .
 
 Train the model
 -------
