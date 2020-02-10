@@ -20,6 +20,8 @@ To install this package,
 
 3. pip install -e .
 
+pip install -e . will install required the dependencies. I recommend to create new conda environment before install this package.
+
 Train the model
 -------
 To train the model, pass the training data directory to ./segmentation_3D/train.py 
