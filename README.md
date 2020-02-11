@@ -20,7 +20,7 @@ To install this package,
 
 3. pip install -e .
 
-pip install -e . will install required the dependencies. I recommend to create new conda environment before install this package.
+pip install -e . will install required dependencies. I recommend to create new conda environment before install this package.
 
 Train the model
 -------
